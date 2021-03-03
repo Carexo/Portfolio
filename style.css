@@ -119,10 +119,12 @@ i {
   position: relative;
   font-size: 2.5rem;
   transition: top 500ms, left 500ms;
+  height: 40px;
 }
 
 .tooltip {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 300;
   visibility: hidden;
   width: 5rem;
   background-color: black;
@@ -182,4 +184,14 @@ i:hover .tooltip {
 .fa-node {
   top: 200px;
   left: -160px;
+}
+
+.projects {
+  display: flex;
+  align-items: center;
+  grid-area: 2 / 10 / 2 / 12;
+  align-self: end;
+  border: 5px solid rgb(0, 0, 0);
+  width: 100%;
+  height: 50%;
 }
