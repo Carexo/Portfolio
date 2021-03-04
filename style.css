@@ -25,8 +25,23 @@ header {
 
 h1 {
   font-size: 2.5rem;
-  margin-left: 3rem;
+  margin-left: 4vw;
   flex: 5 1;
+}
+
+.nav-button {
+  background: url("img/menu.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 3vw;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  height: 2.5rem;
+  width: 2.5rem;
 }
 
 nav {
@@ -50,7 +65,7 @@ nav div {
 }
 
 main {
-  margin-top: 10%;
+  margin-top: 8vw;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -203,16 +218,110 @@ i:hover .tooltip {
   .header-background {
     top: -3rem;
   }
+
   nav {
+    font-size: 1.4rem;
     flex: 2 5 20%;
+  }
+
+  .portrait {
+    width: 60%;
+    grid-area: 1 / 2 / 1 / 6;
   }
 }
 
 @media only screen and (max-width: 1030px) {
   .header-background {
-    top: -2rem;
+    top: -1.5rem;
   }
+
+  header {
+    justify-content: space-between;
+  }
+
   nav {
-    flex: 2 5 20%;
+    display: none;
   }
-} ;
+
+  .nav-button {
+    visibility: visible;
+  }
+
+  main {
+    grid-template-columns: repeat(9, 1fr);
+  }
+
+  .portrait {
+    width: 100%;
+    grid-area: 1 / 2 / 1 / 5;
+  }
+
+  .about-me {
+    grid-area: 1 / 6 / 1 / 9;
+  }
+
+  .skills {
+    grid-area: 2 / 2 / 2 / 5;
+  }
+
+  .projects {
+    grid-area: 2 / 6 / 2 / 9;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .header-background {
+    top: -1.5rem;
+  }
+
+  header {
+    height: 3.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .header-background {
+    top: 0rem;
+    display: none;
+  }
+
+  header {
+    height: 3.5rem;
+    background-color: rgb(0, 0, 0);
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .portrait {
+    width: 50%;
+  }
+
+  .about-me {
+    width: 70%;
+  }
+
+  .skills {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+
+  .projects {
+    width: 50%;
+    height: 10vh;
+  }
+}
