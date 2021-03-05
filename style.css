@@ -53,6 +53,11 @@ nav {
   cursor: pointer;
 }
 
+nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
 nav div {
   padding: 0.6rem;
 }
@@ -75,8 +80,38 @@ main {
 
 .portrait {
   width: 100%;
-  grid-area: 1 / 2 / 1 / 4;
   border-radius: 20%;
+}
+
+.portrait-container {
+  grid-area: 1 / 2 / 1 / 4;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info {
+  margin-top: 1vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-info i {
+  font-size: 2.3rem;
+  margin: 0px 0px;
+  width: 25%;
+  text-align: center;
+
+  transition: color 200ms;
+}
+
+.contact-info i:hover {
+  color: rgb(60, 60, 60);
+}
+
+.contact-info a {
+  color: inherit;
 }
 
 .about-me {
@@ -225,7 +260,10 @@ i:hover .tooltip {
   }
 
   .portrait {
-    width: 60%;
+    width: 90%;
+  }
+
+  .portrait-container {
     grid-area: 1 / 2 / 1 / 6;
   }
 }
@@ -252,7 +290,10 @@ i:hover .tooltip {
   }
 
   .portrait {
-    width: 100%;
+    width: 90%;
+  }
+
+  .portrait-container {
     grid-area: 1 / 2 / 1 / 5;
   }
 
@@ -307,7 +348,7 @@ i:hover .tooltip {
     flex-direction: column;
   }
 
-  .portrait {
+  .portrait-container {
     width: 50%;
   }
 
@@ -323,5 +364,9 @@ i:hover .tooltip {
   .projects {
     width: 50%;
     height: 10vh;
+  }
+
+  .contact-info i {
+    font-size: 1.9rem;
   }
 }
