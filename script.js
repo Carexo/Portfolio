@@ -12,6 +12,10 @@ const projectsElement = document.querySelector(".nav-projects");
 const skillsElement = document.querySelector(".nav-skills");
 const contactElement = document.querySelector(".nav-contact");
 
+const contactField = document.querySelector(".contact");
+const contactButton = document.querySelector(".contact-button");
+const overlay = document.querySelector(".overlay");
+
 function showSkills() {
   for (let i = 0; i < icons.length; i++) {
     icons[i].classList.remove("hidden");
@@ -38,6 +42,16 @@ function closeNavbar() {
   navbarCloseButton.style.display = "none";
 }
 
+function showContactField() {
+  overlay.classList.remove("hidden");
+  contactField.classList.remove("hidden");
+}
+
+function closeContactField() {
+  overlay.classList.add("hidden");
+  contactField.classList.add("hidden");
+}
+
 skillsButton.addEventListener("click", showSkills);
 navbarOpenButton.addEventListener("click", showNavbar);
 navbarCloseButton.addEventListener("click", closeNavbar);
@@ -48,3 +62,6 @@ skillsElement.addEventListener("click", closeNavbar);
 contactElement.addEventListener("click", closeNavbar);
 
 skillsElement.addEventListener("click", showSkills);
+contactElement.addEventListener("click", showContactField);
+
+contactButton.addEventListener("click", closeContactField);

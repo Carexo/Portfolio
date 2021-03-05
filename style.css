@@ -37,10 +37,13 @@ h1 {
   z-index: 0;
 }
 
-.nav-button-close {
+.close {
   background: url("img/close.svg");
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.nav-button-close {
   margin-right: 3vw;
   display: none;
   z-index: 5;
@@ -102,6 +105,10 @@ main {
 }
 
 .contact {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  column-gap: 2rem;
+
   position: fixed;
   top: 50%;
   left: 50%;
@@ -109,10 +116,109 @@ main {
 
   background-color: black;
   color: white;
+
+  border-radius: 3rem;
+  border: 0.6rem solid rgb(255, 255, 255);
   width: 50%;
-  height: 70%;
+  height: 45%;
 
   z-index: 3;
+}
+
+.contact-button {
+  position: absolute;
+  right: 2%;
+  top: 2%;
+}
+
+form {
+  margin: 0;
+  grid-column: 1 / 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+}
+
+label {
+  padding-top: 1rem;
+  padding-bottom: 0.2rem;
+
+  font-size: 1.2rem;
+}
+
+input {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 2px solid rgb(255, 255, 255);
+
+  background-color: rgb(0, 0, 0);
+  outline: none;
+}
+
+form * {
+  margin: 0;
+
+  width: 100%;
+}
+
+textarea {
+  margin: 0;
+  height: 5rem;
+
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: "Roboto" sans-serif;
+
+  resize: none;
+
+  border: 2px solid rgb(255, 255, 255);
+}
+
+#submit {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  width: 6rem;
+
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  outline: none;
+
+  align-self: center;
+
+  transition: background-color 200ms;
+}
+
+#submit:hover {
+  background-color: rgb(220, 220, 220);
+}
+
+.contact .contact-info {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.icon-wrap {
+  margin: 0;
+  display: flex;
+
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.icon-wrap i {
+  padding: 0rem 0.5rem;
 }
 
 .portrait {
@@ -127,7 +233,7 @@ main {
   flex-direction: column;
 }
 
-.contact-info {
+.portrait-container .contact-info {
   margin-top: 1vh;
   width: 100%;
   display: flex;
@@ -292,6 +398,9 @@ i:hover .tooltip {
   transform: translate(-50%, -50%);
   z-index: 2;
 
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+
   height: 100%;
   width: 100%;
 }
@@ -354,6 +463,11 @@ i:hover .tooltip {
   .projects {
     grid-area: 2 / 6 / 2 / 9;
   }
+
+  .contact {
+    width: 70%;
+    height: 50%;
+  }
 }
 
 @media only screen and (max-width: 750px) {
@@ -375,6 +489,10 @@ i:hover .tooltip {
 
   h2 {
     font-size: 1.6rem;
+  }
+
+  .contact {
+    width: 85%;
   }
 }
 
@@ -416,7 +534,42 @@ i:hover .tooltip {
     height: 10vh;
   }
 
-  .contact-info i {
+  .portrait-container .contact-info i {
     font-size: 1.9rem;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    height: 75%;
+  }
+
+  .contact * {
+    font-size: 1rem;
+  }
+
+  form {
+    margin: 0;
+  }
+
+  form * {
+    width: 75%;
+  }
+
+  #submit {
+    font-size: 1rem;
+  }
+
+  textarea {
+    font-size: 0.9rem;
+  }
+
+  .icon-wrap {
+    flex-direction: column;
+    padding: 0.25rem;
+  }
+
+  .contact .contact-info {
+    align-items: center;
   }
 }

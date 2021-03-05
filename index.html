@@ -18,7 +18,7 @@
       <button class="nav-button hidden"></button>
 
       <nav>
-        <button class="nav-button-close"></button>
+        <button class="nav-button-close close"></button>
         <div class="nav-about"><a href="#about-me">About me</a></div>
         <div class="nav-projects"><a href="#projects">Projects</a></div>
         <div class="nav-skills"><a href="#skills">Skills</a></div>
@@ -26,7 +26,8 @@
       </nav>
     </header>
     <main>
-      <section class="contact">
+      <section class="contact hidden">
+        <button class="contact-button close"></button>
         <form>
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required />
@@ -36,8 +37,30 @@
           <textarea if="description" name="description">
 Description...</textarea
           >
-          <input type="submit" value="Contact!" />
+          <input type="submit" id="submit" value="Contact!" />
         </form>
+        <div class="contact-info">
+          <div class="icon-wrap">
+            <a href="mailto: marcel.mietla3@gmail.com"
+              ><i class="fas fa-envelope"></i
+            ></a>
+            E-mail
+          </div>
+          <div class="icon-wrap">
+            <a href="https://github.com/Carexo"
+              ><i class="fab fa-github-square"></i
+            ></a>
+            GitHub
+          </div>
+          <div class="icon-wrap">
+            <a
+              href="https://www.linkedin.com/in/marceli-miet%C5%82a-209a411b8/"
+            >
+              <i class="fab fa-linkedin"></i
+            ></a>
+            LinkedIn
+          </div>
+        </div>
       </section>
       <section class="portrait-container">
         <img class="portrait" src="img/norbi.jpg" alt="A photo of Marceli" />
@@ -77,7 +100,7 @@ Description...</textarea
         <h2>Projects</h2>
       </section>
     </main>
-    <div class="overlay"></div>
+    <div class="overlay hidden"></div>
     <script src="script.js" async defer></script>
   </body>
 </html>
