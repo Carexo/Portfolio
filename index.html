@@ -16,14 +16,29 @@
     <header>
       <h1>Marceli Mietla</h1>
       <button class="nav-button hidden"></button>
+
       <nav>
+        <button class="nav-button-close"></button>
         <div class="nav-about"><a href="#about-me">About me</a></div>
-        <div class="nav-projects"><a href="#about-me">Projects</a></div>
-        <div class="nav-skills"><a href="#about-me">Skills</a></div>
-        <div class="nav-contact"><a href="#about-me">Contact</a></div>
+        <div class="nav-projects"><a href="#projects">Projects</a></div>
+        <div class="nav-skills"><a href="#skills">Skills</a></div>
+        <div class="nav-contact">Contact</div>
       </nav>
     </header>
     <main>
+      <section class="contact">
+        <form>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required />
+          <label for="description">Description</label>
+          <textarea if="description" name="description">
+Description...</textarea
+          >
+          <input type="submit" value="Contact!" />
+        </form>
+      </section>
       <section class="portrait-container">
         <img class="portrait" src="img/norbi.jpg" alt="A photo of Marceli" />
         <div class="contact-info">
@@ -38,14 +53,14 @@
           ></a>
         </div>
       </section>
-      <section class="about-me">
+      <section id="about-me" class="about-me">
         <h2>About me</h2>
         <article>
           My name is Marceli. I am from Poland and like web developer and
           machine learning. I am going to secondary school.
         </article>
       </section>
-      <section class="skills">
+      <section id="skills" class="skills">
         <h2>Skills</h2>
         <i class="fab fa-html5 hidden"><span class="tooltip">HTML5</span></i>
         <i class="fab fa-css3-alt hidden"><span class="tooltip">CSS3</span></i>
@@ -58,11 +73,11 @@
         <i class="fab fa-github hidden"><span class="tooltip">GitHub</span></i>
         <i class="fab fa-node hidden"><span class="tooltip">node JS</span></i>
       </section>
-      <section class="projects">
+      <section id="projects" class="projects">
         <h2>Projects</h2>
       </section>
     </main>
-
+    <div class="overlay"></div>
     <script src="script.js" async defer></script>
   </body>
 </html>

@@ -34,6 +34,16 @@ h1 {
   background-position: center;
   background-repeat: no-repeat;
   margin-right: 3vw;
+  z-index: 0;
+}
+
+.nav-button-close {
+  background: url("img/close.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 3vw;
+  display: none;
+  z-index: 5;
 }
 
 button {
@@ -62,6 +72,19 @@ nav div {
   padding: 0.6rem;
 }
 
+.mobile-navbar {
+  padding-top: 0.5rem;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
 .nav-contact {
   box-sizing: border-box;
   color: rgb(0, 0, 0);
@@ -76,6 +99,20 @@ main {
   grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: 60%;
   gap: 1.5rem;
+}
+
+.contact {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: black;
+  color: white;
+  width: 50%;
+  height: 70%;
+
+  z-index: 3;
 }
 
 .portrait {
@@ -99,7 +136,7 @@ main {
 
 .contact-info i {
   font-size: 2.3rem;
-  margin: 0px 0px;
+  margin: 0;
   width: 25%;
   text-align: center;
 
@@ -138,9 +175,6 @@ h2 {
 }
 
 .skills {
-  display: flex;
-  justify-content: center;
-
   grid-area: 2 / 3 / 2 / 6;
   align-self: end;
 
@@ -156,8 +190,8 @@ h2 {
 
 .skills h2 {
   position: relative;
-  left: 150px;
-  top: 65px;
+
+  top: 4rem;
   color: rgb(255, 255, 255);
 }
 
@@ -170,7 +204,7 @@ i {
   position: relative;
   font-size: 2.5rem;
   transition: top 500ms, left 500ms;
-  height: 40px;
+  height: 2.5rem;
 }
 
 .tooltip {
@@ -181,8 +215,8 @@ i {
   background-color: black;
   color: #fff;
   text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
+  padding: 0.35rem 0;
+  border-radius: 0.45rem;
 
   position: absolute;
   bottom: 100%;
@@ -190,51 +224,53 @@ i {
   margin-left: -2.5rem;
 
   z-index: 1;
-  opacity: 0.5;
+
+  transition: opacity 300ms linear;
 }
 
 i:hover .tooltip {
   visibility: visible;
+  opacity: 0.5;
 }
 
 .fa-html5 {
-  top: -20px;
-  left: 0px;
+  top: -60px;
+  left: -25px;
 }
 
 .fa-css3-alt {
-  top: -60px;
-  left: 60px;
+  top: -100px;
+  left: 35px;
 }
 
 .fa-js-square {
-  top: -20px;
-  left: 130px;
+  top: -60px;
+  left: 105px;
 }
 
 .fa-python {
-  top: 65px;
-  left: -130px;
+  top: 20px;
+  left: -160px;
 }
 
 .fa-npm {
-  top: 65px;
-  left: 90px;
+  top: -20px;
+  left: 195px;
 }
 
 .fa-git {
-  top: 170px;
-  left: -180px;
+  top: 70px;
+  left: -80px;
 }
 
 .fa-github {
-  top: 160px;
-  left: -20px;
+  top: 65px;
+  left: 75px;
 }
 
 .fa-node {
-  top: 200px;
-  left: -160px;
+  top: 70px;
+  left: 65px;
 }
 
 .projects {
@@ -242,13 +278,23 @@ i:hover .tooltip {
   align-items: center;
   grid-area: 2 / 10 / 2 / 12;
   align-self: end;
-  border: 5px solid rgb(0, 0, 0);
+  border: 0.3rem solid rgb(0, 0, 0);
   width: 100%;
   height: 50%;
 
   cursor: pointer;
 }
 
+.overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+  height: 100%;
+  width: 100%;
+}
 @media only screen and (max-width: 1400px) {
   .header-background {
     top: -3rem;
@@ -313,6 +359,10 @@ i:hover .tooltip {
 @media only screen and (max-width: 750px) {
   .header-background {
     top: -1.5rem;
+  }
+
+  .skills h2 {
+    top: 4.3rem;
   }
 
   header {
