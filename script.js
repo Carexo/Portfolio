@@ -47,21 +47,31 @@ function showContactField() {
   contactField.classList.remove("hidden");
 }
 
-function closeContactField() {
-  overlay.classList.add("hidden");
-  contactField.classList.add("hidden");
+function closeContactField(element) {
+  if (element.key === "Escape" || element.constructor.name === "MouseEvent") {
+    overlay.classList.add("hidden");
+    contactField.classList.add("hidden");
+  }
 }
 
-skillsButton.addEventListener("click", showSkills);
+//event listnener with show navbar function
 navbarOpenButton.addEventListener("click", showNavbar);
-navbarCloseButton.addEventListener("click", closeNavbar);
 
+//event listener with closed navbar function
+navbarCloseButton.addEventListener("click", closeNavbar);
 aboutMeElement.addEventListener("click", closeNavbar);
 projectsElement.addEventListener("click", closeNavbar);
 skillsElement.addEventListener("click", closeNavbar);
 contactElement.addEventListener("click", closeNavbar);
 
+//event listener with show skills function
+skillsButton.addEventListener("click", showSkills);
 skillsElement.addEventListener("click", showSkills);
+
+//event listener with showed contact field funciton
 contactElement.addEventListener("click", showContactField);
 
+//Adding event listener to closing Contact field
 contactButton.addEventListener("click", closeContactField);
+overlay.addEventListener("click", closeContactField);
+document.addEventListener("keydown", closeContactField);

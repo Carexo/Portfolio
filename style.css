@@ -541,7 +541,7 @@ i:hover .tooltip {
   .contact {
     display: flex;
     flex-direction: column;
-    height: 75%;
+    height: 85%;
   }
 
   .contact * {
