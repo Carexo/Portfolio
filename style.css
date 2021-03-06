@@ -110,6 +110,7 @@ main {
   column-gap: 2rem;
 
   position: fixed;
+  overflow-y: scroll;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -123,6 +124,10 @@ main {
   height: 45%;
 
   z-index: 3;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }
 
 .contact-button {
@@ -177,6 +182,7 @@ textarea {
   font-family: "Roboto" sans-serif;
 
   resize: none;
+  outline: rgba(220, 220, 220, 0.5);
 
   border: 2px solid rgb(255, 255, 255);
 }
@@ -214,6 +220,7 @@ textarea {
   display: flex;
 
   align-items: center;
+  justify-content: space-between;
   font-size: 1.2rem;
 }
 
@@ -236,8 +243,8 @@ textarea {
 .portrait-container .contact-info {
   margin-top: 1vh;
   width: 100%;
-  display: flex;
-  justify-content: center;
+
+  text-align: center;
 }
 
 .contact-info i {
@@ -254,6 +261,7 @@ textarea {
 }
 
 .contact-info a {
+  margin: inherit;
   color: inherit;
 }
 
@@ -391,6 +399,83 @@ i:hover .tooltip {
   cursor: pointer;
 }
 
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+
+  position: fixed;
+
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  border: 0.6rem solid rgb(255, 255, 255);
+  border-radius: 1rem;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 80%;
+  height: 95%;
+
+  z-index: 3;
+}
+
+.projects-button-close {
+  position: absolute;
+  right: 1%;
+  top: 1%;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vh;
+
+  width: 90%;
+}
+
+.project-img {
+  width: 100%;
+  filter: blur(0.35rem);
+
+  transition: filter 400ms;
+}
+
+.project-img:hover {
+  filter: blur(0.3rem);
+}
+
+.project-img:hover .project-info {
+  color: red;
+}
+
+.project-info {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  text-align: center;
+
+  width: 80%;
+  position: relative;
+  top: -12rem;
+}
+
+.visit-button {
+  margin-top: 1.5rem;
+  width: 6rem;
+  border: 0.2rem solid rgb(0, 0, 0);
+  border-radius: 0.5rem;
+  background-color: rgb(255, 255, 255);
+
+  font-weight: bold;
+
+  transition: background-color 400ms;
+}
+
+.visit-button:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+}
+
 .overlay {
   position: fixed;
   top: 50%;
@@ -404,6 +489,7 @@ i:hover .tooltip {
   height: 100%;
   width: 100%;
 }
+
 @media only screen and (max-width: 1400px) {
   .header-background {
     top: -3rem;
@@ -468,6 +554,10 @@ i:hover .tooltip {
     width: 70%;
     height: 50%;
   }
+
+  .project-info {
+    top: -9rem;
+  }
 }
 
 @media only screen and (max-width: 750px) {
@@ -493,6 +583,21 @@ i:hover .tooltip {
 
   .contact {
     width: 85%;
+  }
+
+  .projects-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-info {
+    font-size: 0.9rem;
+    top: -8rem;
+  }
+
+  .visit-button {
+    margin-top: 1rem;
+    font-size: 0.8rem;
   }
 }
 
