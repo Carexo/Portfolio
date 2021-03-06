@@ -97,6 +97,7 @@ nav div {
 
 main {
   margin-top: 8vw;
+  margin-bottom: 3vh;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
