@@ -426,6 +426,11 @@ i:hover .tooltip {
   top: 1%;
 }
 
+h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
 .project {
   display: flex;
   flex-direction: column;
