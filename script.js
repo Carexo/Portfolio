@@ -81,6 +81,8 @@ function copyEmailToClipboard() {
   document.body.appendChild(email);
 
   email.select();
+  copyText.setSelectionRange(0, 99999);
+
   document.execCommand("copy");
   alert("Email copied");
 }
